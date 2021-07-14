@@ -414,19 +414,20 @@
         <h4 class="title">Подпишитесь на рассылку</h4>
         <form class="signup-form" action="#">
           <input class="signup-area" type="email" placeholder="E-mail" name="user-email" required>
+          <button type="submit" class="signup-button"><span class="signup-button-title">Подписаться</span>
+            <svg width="24" height="24">
+              <use href="./images/icons.svg#icon-telegram"></use>
+            </svg>
+          </button>
         </form>
-        <button type="submit" class="signup-button"><span class="signup-button-title">Подписаться</span>
-          <svg width="24" height="24">
-            <use href="./images/icons.svg#icon-telegram"></use>
-          </svg>
-        </button>
+        
       </div>
     </div>
   </footer>
 
   <!--Modal-->
 
-  <div class="backdrop is-hidden" data-modal>
+  <div class="backdrop" data-modal>
     <div class="modal">
       <button type="button" class="close-btn" data-modal-close>
         <svg width="11" height="11">
@@ -438,21 +439,43 @@
 
       <form class="user-contact-form">
         <label for="user-name" class="form-label">Имя</label>
-        <input type="text" class="contact-form-input" name="email" id="user-name" />
+        <span class="form-label-wrapper">
+          <input type="text" class="contact-form-input" name="email" id="user-name" minlength="2" pattern="[a-zA-Zа-яёА-ЯЁ]+" title="Минимум 2 символа латиницы или кириллицы" required />
+          <svg width="18" height="18" class="form-label-icon">
+            <use href="./images/icons.svg#icon-person"></use>
+          </svg>
+
+        </span>
+        
 
         <label for="user_phone" class="form-label">Телефон</label>
-        <input type="tel" class="contact-form-input" name="tel" id="user_phone" />
+        <span class="form-label-wrapper">
+          <input type="tel" class="contact-form-input" name="tel" id="user_phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" title="Формат 000-000-00-00" required/>
+          <svg width="18" height="18" class="form-label-icon">
+            <use href="./images/icons.svg#icon-phone"></use>
+          </svg>
+
+        </span>
+        
 
         <label for="user_email" class="form-label">Почта</label>
-        <input type="email" class="contact-form-input" name="email" id="user_email" />
+        <span class="form-label-wrapper">
+          <input type="email" class="contact-form-input" name="email" id="user_email" required/>
+          <svg width="18" height="18" class="form-label-icon">
+            <use href="./images/icons.svg#icon-email"></use>
+          </svg>
+
+        </span>
+        
 
         <label for="user_comments" class="form-label">Комментарий</label>
-        <textarea type="text" class="contact-form-input" name="password" id="user_comments"
+        <textarea type="text" class="comment-input" name="password" id="user_comments"
           placeholder="Введите текст"></textarea>
 
-        <input type="checkbox" name="agreement" id="user_password" />
-        Соглашаюсь с рассылкой и принимаю <a href="#" rel="noreferrer noopener nofollow" target="blank">Условия
-          договора</a>
+        <input type="checkbox" name="agreement" id="policy-agreement" />
+        <label for="policy-agreement" class="policy-remark">Соглашаюсь с рассылкой и принимаю&nbsp;<a href="#" rel="noreferrer noopener nofollow" target="blank">Условия
+          договора</a></label>
+        
 
 
 
